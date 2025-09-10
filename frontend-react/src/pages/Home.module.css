@@ -1,0 +1,204 @@
+/* Base Page */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  color: #e6ebff;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('/hero_bg.jpg') center/cover no-repeat;
+  color: #fff;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 14, 34, 0.7) 0%, rgba(12, 14, 34, 0.95) 100%);
+  backdrop-filter: blur(1px);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  border-radius: 20px;
+  animation: fadeUp 1s ease forwards;
+}
+
+.title {
+  margin: 0 0 1rem 0;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  background: linear-gradient(90deg, #c7d2fe, #8da2fb, #6a8bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: #bfcaff;
+  opacity: 0.9;
+}
+
+/* Cards */
+.cardsSection {
+  padding: 3rem 1.5rem;
+  animation: fadeIn 1.5s ease forwards;
+}
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(18, 22, 54, 0.6);
+  border: 1px solid rgba(146, 163, 253, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+  color: #e0e7ff;
+}
+.card p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #b8c6ff;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(20, 20, 40, 0.6);
+  border-color: rgba(130, 160, 255, 0.45);
+}
+
+/* Backend Status */
+.backends {
+  padding: 2rem 1.5rem;
+}
+.backendList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.backendList li {
+  padding: 0.6rem 0;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+.online {
+  color: #4ade80; /* green */
+  font-weight: 600;
+}
+.offline {
+  color: #f87171; /* red */
+  font-weight: 600;
+}
+
+/* Recent Jobs */
+.recentJobs {
+  padding: 2rem 1.5rem;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(18, 22, 54, 0.55);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.table th,
+.table td {
+  padding: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+.table th {
+  background: rgba(255, 255, 255, 0.08);
+  color: #cdd5ff;
+  font-weight: 600;
+}
+.table tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.running {
+  color: #fbbf24;
+  font-weight: bold;
+}
+.waiting {
+  color: #60a5fa;
+  font-weight: bold;
+}
+.finished {
+  color: #34d399;
+  font-weight: bold;
+}
+.failed {
+  color: #f87171;
+  font-weight: bold;
+}
+
+/* Charts */
+.visuals {
+  padding: 2.5rem 1.5rem;
+}
+.charts {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.chartBox {
+  background: rgba(18, 22, 54, 0.6);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(146, 163, 253, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.chartBox:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+}
+.chartBox h3 {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: #dbe4ff;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
